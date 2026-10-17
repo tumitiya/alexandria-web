@@ -31,7 +31,7 @@ function getVisibleEntries() {
 
 function render() {
     list.innerHTML = "";
-    for (const entry of getVisibleEntries) {
+    for (const entry of getVisibleEntries()) {
         const card = document.createElement("div");
         card.className = "entry";
 
@@ -95,7 +95,7 @@ form.addEventListener("submit", function(event){
     render();
 })
 
-searchBox.addEventlistener("input", render);
+searchBox.addEventListener("input", render);
 statusFilter.addEventListener("change", render);
 typeFilter.addEventListener("change", render)
 
