@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Alexandria</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <h1>Alexandria</h1>
+
+        <form id="add-form" class="add-form">
+            <input type="text" id="title" placeholder="Title" required>
+            <input type="text" id="site" placeholder="Site (e.g. Webtoons)">
+            <input type="number" id="progress" placeholder="Chapter or Episode" required>
+            <select id="type">
+                <option>Manga</option>
+                <option>Show</option>
+            </select>
+            <select id="status">
+                <option>Reading</option>
+                <option>Watching</option>
+                <option>Completed</option>
+            </select>
+            <button type="submit">Add</button>
+        </form>
+        <div id="entries"></div>
+        <script src="script.js"></script>
+    </body>
+</html>
