@@ -22,6 +22,20 @@
             </select>
             <button type="submit">Add</button>
         </form>
+        <div class="filters">
+            <input type="text" id="search" placeholder="Search titles">
+            <selsect id="filter-status">
+                <option value="all">All statuses</option>
+                <option>Reading</option>
+                <option>Watching</option>
+                <option>Completed</option>
+            </selsect>
+            <select id="filter-type">
+                <option value="all">Manga and shows</option>
+                <option>Manga</option>
+                <option>Show</option>
+            </select>
+        </div>
         <div id="entries"></div>
         <script src="script.js"></script>
         <script data-goatcounter="https://tumi.goatcounter.com/count"

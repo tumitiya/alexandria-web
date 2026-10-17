@@ -1,5 +1,8 @@
 const form = document.getElementById("add-form");
 const list = document.getElementById("entries");
+const searchBox = document.getElementById("search");
+const statusFilter = document.getElementById("filter-status");
+const typeFilter = document.getElementById("filter-by-type")
 
 function loadEntries() {
     try{
@@ -17,9 +20,18 @@ function saveEntries() {
 let entries = loadEntries();
 let nextId = entries.length ? Math.max(...entries.map(e => e.id)) + 1 : 1;
 
+function getVisibleEntries() {
+    const q = searchBox.value.trim().tolowerCase();
+    return entries.filter(e => 
+        e.title.toLowerCase().includes(q) &&
+        (statusFilter.value === "all" || e.status === statusFilter.value) &&
+        (typeFilter.value === "all" || e.type === type.Filter.value)
+    );
+}
+
 function render() {
     list.innerHTML = "";
-    for (const entry of entries) {
+    for (const entry of getVisibleEntries) {
         const card = document.createElement("div");
         card.className = "entry";
 
@@ -82,5 +94,9 @@ form.addEventListener("submit", function(event){
     form.reset();
     render();
 })
+
+searchBox.addEventlistener("input", render);
+statusFilter.addEventListener("change", render);
+typeFilter.addEventListener("change", render)
 
 render();
