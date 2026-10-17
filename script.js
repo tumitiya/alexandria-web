@@ -36,7 +36,10 @@ function render() {
         card.className = "entry";
 
         const text = document.createElement("p");
-        text.textContent = `${entry.title}, ${entry.type}, ${entry.status}, ${entry.site}, Chapter/Episode ${entry.progress}`;
+        const parts = [entry.title, entry.type, entry.status];
+        if (entry.site) parts.push(entry.site);
+        parts.push(`Chapter/Episode ${entry.progress}`);
+        text.textContent = parts.join(", ");
         
         const actions = document.createElement("div");
         actions.className = "actions";
