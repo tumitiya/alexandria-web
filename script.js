@@ -2,7 +2,7 @@ const form = document.getElementById("add-form");
 const list = document.getElementById("entries");
 const searchBox = document.getElementById("search");
 const statusFilter = document.getElementById("filter-status");
-const typeFilter = document.getElementById("filter-by-type")
+const typeFilter = document.getElementById("filter-type")
 
 function loadEntries() {
     try{
