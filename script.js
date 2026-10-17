@@ -21,7 +21,7 @@ let entries = loadEntries();
 let nextId = entries.length ? Math.max(...entries.map(e => e.id)) + 1 : 1;
 
 function getVisibleEntries() {
-    const q = searchBox.value.trim().tolowerCase();
+    const q = searchBox.value.trim().toLowerCase();
     return entries.filter(e => 
         e.title.toLowerCase().includes(q) &&
         (statusFilter.value === "all" || e.status === statusFilter.value) &&
