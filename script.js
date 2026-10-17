@@ -25,7 +25,7 @@ function getVisibleEntries() {
     return entries.filter(e => 
         e.title.toLowerCase().includes(q) &&
         (statusFilter.value === "all" || e.status === statusFilter.value) &&
-        (typeFilter.value === "all" || e.type === type.Filter.value)
+        (typeFilter.value === "all" || e.type === typeFilter.value)
     );
 }
 
@@ -92,6 +92,9 @@ form.addEventListener("submit", function(event){
     nextId += 1;
     saveEntries();
     form.reset();
+    searchBox.value = "";
+    statusFilter.value = "all";
+    typeFilter.value = "all";
     render();
 })
 
